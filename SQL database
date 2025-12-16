@@ -1,0 +1,9 @@
+import sqlite3
+CREATE DATABASE MovieRecSystem;
+CREATE TABLE Movies_24 (
+    Title VARCHAR(255),
+    Duration FLOAT(1,2),
+    Genre VARCHAR(255)
+INSERT INTO MovieRecSystem
+VALUES ('Dune:Part Two', 2.46, 'Sci-Fi'`)
+VALUES (`The Godfather', 2.9, 'Crime')
