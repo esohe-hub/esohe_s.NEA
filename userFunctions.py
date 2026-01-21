@@ -62,5 +62,3 @@ def rate_movies(user_id):
     conn.close()
 
 
-#getting user inputs to store in the database for our recommendations
-#Parameterised queries are used to prevent SQL injection attacks by seperating SQL code from data which improves security.
