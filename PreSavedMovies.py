@@ -30,10 +30,10 @@ movies = [
         ("Tron: Ares", 119, "Joachim Ronning", "Jared Leto, Greta Lee, Jeff Bridges", "PG - 13", 48, "A highly sophisticated program, Ares, is sent from the digital world into the real world on a dangerous mission."),
         ("Avatar: Fire and Ash", 197, "James Cameron", "Sam Worthington, Zoe Saldana, Sigourney Weaver", "PG - 13", 61, "Jake and Neytiri's family grapples with grief, encountering a new, aggressive Na'vi tribe, the Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus emerges."),
         ("M3GAN 2.0", 120, "Gerard Johnstone", "Allison Williams, Violet McGraw, Amie Donald", "PG - 13", 54, "Two years after M3GAN's rampage, her creator, Gemma, resorts to resurrecting her infamous creation in order to take down Amelia, the military-grade weapon who was built by a defense contractor who stole M3GAN's underlying tech."),
-        ("Nobody 2", 89, "Timo Tjahjanto", "Bob Odenkirk, Connie Nielsen, Christopher Lloyd", "R", 59, "Suburban dad Hutch Mansell, a former lethal assassin, is pulled back into his violent past after thwarting a home invasion, setting off a chain of events."),
-        ("One Battle After Another", 161, "Paul Thomas Anderson", "Leonardo DiCaprio, Sean Penn, Benicio Del Toro", "R", 95, "When their enemy resurfaces after 16 years, a group of ex-revolutionaries reunite to rescue the daughter of one of their own."),
-        ("Predator: Badlands", 107, "Dan Trachtenberg", "Elle Fanning, Dimitrius Schuster-Koloamatangi, Ravi Narayan", 71, "A young Predator outcast from his clan finds an unlikely ally on his journey in search of the ultimate adversary."),
-        ("The Naked Gun", 85, "Akiva Schaffer", "Liam Neeson, Pamela Anderson, Paul Walter Hauser", 75, "Following in his father's footsteps, a detective works to solve a murder case and save his police department from closure."),
+        ("Nobody 2", 89, "Action","Timo Tjahjanto", "Bob Odenkirk, Connie Nielsen, Christopher Lloyd", "R", 59, "Suburban dad Hutch Mansell, a former lethal assassin, is pulled back into his violent past after thwarting a home invasion, setting off a chain of events."),
+        ("One Battle After Another", 161, "Thriller", "Paul Thomas Anderson", "Leonardo DiCaprio, Sean Penn, Benicio Del Toro", "R", 95, "When their enemy resurfaces after 16 years, a group of ex-revolutionaries reunite to rescue the daughter of one of their own."),
+        ("Predator: Badlands", 107, "Sci-Fi", "Dan Trachtenberg", "Elle Fanning, Dimitrius Schuster-Koloamatangi, Ravi Narayan", 71, "A young Predator outcast from his clan finds an unlikely ally on his journey in search of the ultimate adversary."),
+        ("The Naked Gun", 85, "Comedy" "Akiva Schaffer", "Liam Neeson, Pamela Anderson, Paul Walter Hauser", 75, "Following in his father's footsteps, a detective works to solve a murder case and save his police department from closure."),
 ]
 
 
