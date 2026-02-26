@@ -48,15 +48,15 @@ def rate_movies(user_id):
             else:
                 genre = genre.title()
                 break
-    try:
-        cursor.execute('''
-            INSERT INTO Ratings (UserId, Rating, Movie_title, Genre)
-            VALUES (?, ?, ?, ?)
-        ''', (user_id, rating, movie_title, genre)
-        )
-        print("Movie saved! \n")
-    except sqlite3.IntegrityError:
-        print("You have already rated this movie.")
+        try:
+            cursor.execute('''
+                INSERT INTO Ratings (UserId, Rating, Movie_title, Genre)
+                VALUES (?, ?, ?, ?)
+            ''', (user_id, rating, movie_title, genre)
+            )
+            print("Movie saved! \n")
+        except sqlite3.IntegrityError:
+            print("You have already rated this movie.")
         
     conn.commit()
     conn.close()

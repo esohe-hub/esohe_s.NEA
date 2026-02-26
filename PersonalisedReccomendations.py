@@ -1,7 +1,9 @@
-import sqlite3
-conn = sqlite3.connect('MovieRecommendationSystem.db')
-cursor = conn.cursor()
-
+ import sqlite3
+import random
+def personalised_recommendation(user_id):
+    conn = sqlite3.connect('MovieRecommendationSystem.db')
+    cursor = conn.cursor()
+    conn.close
 user_input = input("Please enter: Y if you would like a personalised recommendation, N if you would like a random recommendation and E to exit the program.").upper()
 '''if user_input == "Y":
    
