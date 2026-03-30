@@ -1,24 +1,29 @@
+#gonna create movies table and insert csv file
+#create users table as normal but remember foreign keys and all
+#create ratings table too refer to er diagram
+
+
 import sqlite3
 def create_database(db_name = 'MovieRecommendationSystem.db'): #create actual database
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    
+
     # create Movies table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Movies (
             MovieId INTEGER PRIMARY KEY AUTOINCREMENT,
-            Title TEXT NOT NULL,
+            Title TEXT NOT NULL UNIQUE,
             Duration REAL,
             Genre TEXT,
             Director TEXT,
             Actors TEXT,
             Classification TEXT,
-            Metascore REAL,
+            Meta score REAL,
             Release_Year INTEGER,
             ConciseSummary TEXT
         )
     ''')
-    
+
     #create users table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Users (
@@ -26,9 +31,9 @@ def create_database(db_name = 'MovieRecommendationSystem.db'): #create actual da
             username TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
             preferred_genres TEXT
-        
+
         )
-    ''')  
+    ''')
 
     cursor.execute('''
                    CREATE TABLE IF NOT EXISTS Ratings(
@@ -41,7 +46,7 @@ def create_database(db_name = 'MovieRecommendationSystem.db'): #create actual da
                    FOREIGN KEY (UserId) REFERENCES Users(UserId)
                    )
                      ''')
-    
+
     conn.commit()
     conn.close()
 

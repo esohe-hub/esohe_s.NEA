@@ -1,7 +1,7 @@
-from database_connection import get_connection
+from DatabaseConnection import get_connection
 from PreSavedMovies import movies
 
-def insert_connection():
+def insert_movies():
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -13,3 +13,4 @@ def insert_connection():
 
     conn.commit()
     conn.close()
+insert_movies()

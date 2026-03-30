@@ -1,5 +1,6 @@
 import sqlite3
-conn = sqlite3.connect('MovieRecommendationSystem.db')
+from DatabaseConnection import get_connection
+conn = get_connection()
 cursor = conn.cursor()
 
 
@@ -95,6 +96,8 @@ while True:
         user_id = login()
         if user_id:
             break
+    elif loginOrSignup == "signup":
+        signup()
 conn.close()
 
 '''The login function returns the user's ID if authentication is successful. This value is checked
