@@ -1,49 +1,46 @@
-#gonna create movies table and insert csv file
-#create users table as normal but remember foreign keys and all
-#create ratings table too refer to er diagram
-
-
 import sqlite3
-def create_database(db_name = 'MovieRecommendationSystem.db'): #create actual database
+def create_database(db_name = 'MovieRecDatabase.db'): #create actual database
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
 
-    # create Movies table
+    #create Movies table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Movies (
-            MovieId INTEGER PRIMARY KEY AUTOINCREMENT,
-            Title TEXT NOT NULL UNIQUE,
-            Duration REAL,
-            Genre TEXT,
-            Director TEXT,
-            Actors TEXT,
-            Classification TEXT,
-            Meta score REAL,
+            MovieID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Movie_Title TEXT NOT NULL,
             Release_Year INTEGER,
-            ConciseSummary TEXT
+            Classification TEXT,
+            Duration TEXT,
+            Genre TEXT,
+            IMDB_Rating REAL,
+            ConciseSummary TEXT,
+            Metascore INTEGER,
+            Director TEXT,
+            Actor1 TEXT,
+            Actor2 TEXT,
+            Actor3 TEXT,
+            Actor4 TEXT,
+            NumOfVotes INTEGER
         )
     ''')
 
     #create users table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Users (
-            UserId INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT NOT NULL UNIQUE,
-            password TEXT NOT NULL,
-            preferred_genres TEXT
+            UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Username TEXT NOT NULL UNIQUE,
+            Password TEXT NOT NULL,
+            Preferred_Genres TEXT
 
         )
     ''')
 
     cursor.execute('''
-                   CREATE TABLE IF NOT EXISTS Ratings(
-                   RatingId INTEGER PRIMARY KEY AUTOINCREMENT,
-                   UserId INTEGER NOT NULL,
-                   Rating REAL NOT NULL,
-                   Movie_Title TEXT,
-                   Genre TEXT,
-                   UNIQUE(UserId, Movie_Title),
-                   FOREIGN KEY (UserId) REFERENCES Users(UserId)
+                   CREATE TABLE IF NOT EXISTS User_Ratings(
+                   RatingID INTEGER PRIMARY KEY AUTOINCREMENT,
+                   UserID INTEGER,
+                   MovieID INTEGER,
+                   Rating REAL
                    )
                      ''')
 
