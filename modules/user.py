@@ -1,0 +1,1 @@
+#Handles the functions of the user such as searching for a movie

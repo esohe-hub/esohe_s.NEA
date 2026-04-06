@@ -1,0 +1,1 @@
+#Handles functions applied to each movie such as a filter

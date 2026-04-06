@@ -1,1 +1,1 @@
-print("System is running")
+print("Movie Recommendation System project entry point")
