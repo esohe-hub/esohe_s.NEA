@@ -1,17 +1,38 @@
-import sqlite3
-from DatabaseConnection import get_connection
+from actions.UserAuthentication import user_manager
+from core.user_manager import UserManager
+user_manager = UserManager()
 
 
-def rate_movies(user_id):
-    conn = get_connection()
-    cursor = conn.cursor()
+def rate_movie_ui(user_id):
+    movie_id = input("Enter movie ID: ").strip()
+    rating = input("Enter rating (0 - 10): ").strip()
+
+    if not rating.isdigit():
+        print("Rating must be a number.")
+        return
+
+    rating = int(rating)
+
+    if rating < 0 or rating > 10:
+        print("Rating myst be between 0 and 10.")
+        return
+
+    success = user_manager.rate_movie(user_id, movie_id, rating)
+
+    if success:
+        print("Rating saved!")
+    else:
+        print("Error saving rating.")
+
+
+'''def rate_movies(user_id):
 
     print("Enter movies you have enjoyed.")
     print("Type 'done' when you are finished.")
 
     while True:
-        MovieTitle = input("Movie Title:").strip().title()
-        if len(MovieTitle) == 0:
+        movie_title = input("Movie Title:").strip().title()
+        if len(movie_title) == 0:
             print("Movie title cannot be empty.")
             continue
         if MovieTitle.lower() == 'done':
@@ -51,7 +72,7 @@ def rate_movies(user_id):
                 break
         try:
             cursor.execute('''
-                INSERT INTO Ratings (UserId, Rating, Movie_title, Genre)
+                INSERT INTO User_Ratings (UserID, Rating, Movie_Title, Genre)
                 VALUES (?, ?, ?, ?)
             ''', (user_id, rating, MovieTitle, genre)
             )
@@ -60,6 +81,4 @@ def rate_movies(user_id):
             print("You have already rated this movie.")
         
     conn.commit()
-    conn.close()
-
-
+    conn.close()'''
