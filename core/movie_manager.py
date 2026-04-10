@@ -2,7 +2,7 @@ import sqlite3
 
 class MovieManager:
 
-    def __init__(self, db_name = r"C:\Users\user\Downloads\newfolder\esohe_s.NEA\data\MovieRecDatabase.db"):
+    def __init__(self, db_name = r"C:\Users\user\Downloads\newfolder\esohe_s.NEA\database.sqlite"):
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()
 

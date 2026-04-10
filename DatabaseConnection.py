@@ -1,6 +1,6 @@
 import sqlite3
 
-DATABASE_NAME = "MovieRecommendationSystem.db"
+DATABASE_NAME = "database.sqlite"
 
 def get_connection():
     try:

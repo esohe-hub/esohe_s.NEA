@@ -2,7 +2,7 @@ import csv
 import sqlite3
 
 
-conn = sqlite3.connect(r'/data/MovieRecDatabase.db')
+conn = sqlite3.connect(r'C:\Users\user\Downloads\newfolder\esohe_s.NEA\database.sqlite')
 cursor = conn.cursor()
 
 with open('../data/movie-dataset.csv', mode='r', newline='', encoding='utf-8') as file:
