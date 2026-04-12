@@ -2,6 +2,15 @@ import sqlite3
 from DatabaseConnection import get_connection
 
 class UserManager:
+
+    def get_user_movies(self, user_id):
+        self.cursor.execute('''SELECT Movies.* FROM Movies JOIN User_Ratings ON Movies.MovieId = User_Ratings.MovieId WHERE User_Ratings.UserId = ? ''', (user_id,))
+        return self.cursor.fetchall()
+
+    def get_user_ratings(self, user_id):
+        self.cursor.execute("SELECT * FROM user_ratings WHERE user_id = ?", (user_id,))
+        return self.cursor.fetchall()
+
     def __init__(self):
         self.conn = get_connection()
         self.cursor = self.conn.cursor()
@@ -25,12 +34,3 @@ class UserManager:
             return True
         except sqlite3.IntegrityError:
             return False
-
-    def get_user_movies(self, user_id):
-        self.cursor.execute('''SELECT Movies.* FROM Movies JOIN User_Ratings ON Movies.MovieId = User_Ratings.MovieId WHERE User_Ratings.UserId = ? ''', (user_id,))
-        return self.cursor.fetchall()
-
-    def get_user_ratings(self, user_id):
-        self.cursor.execute("SELECT * FROM User_Ratings WHERE UserId = ?", (user_id,))
-        return self.cursor.fetchall()
-
