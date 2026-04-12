@@ -18,12 +18,18 @@ recommender = Recommender(movie_manager, user_manager)
 user_id = 1
 
 #Get recommendations
-recs = recommender.recommend_movies(user_id)
+recs = recommender.get_recommendations(user_id)
+
+print("DEBUG:", recs, type(recs))
+
+for movie in recs:
+    print(movie)
+
 
 #Display the results
-print("\nRECOMMENDATIONS (UNSEEN MOVIES):")
-for movie in recs:
-    print(movie["title"], "-", movie["genre"])
+print("\nRECOMMENDATIONS (RANKED):")
+for i, movie in enumerate(recs, start=1):
+    print(f"{i}. {movie['title']} | Genre: {movie['genre']} | Rating: {movie['rating']} | Score: {movie['score']}")
 
 print("\nALL MOVIES:", movie_manager.get_all_movies())
 print("SEARCH TITLE:", movie_manager.search_by_title("batman"))
@@ -32,4 +38,3 @@ print("MIN RATING:", movie_manager.filter_by_rating(8))
 print("BY YEAR:", movie_manager.filter_by_year(2010))
 
 movie_manager.close_connection()
-
