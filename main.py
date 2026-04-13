@@ -38,3 +38,7 @@ print("MIN RATING:", movie_manager.filter_by_rating(8))
 print("BY YEAR:", movie_manager.filter_by_year(2010))
 
 movie_manager.close_connection()
+
+from setup.user_interface import launch_app
+
+launch_app()
